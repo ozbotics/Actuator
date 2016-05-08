@@ -1,4 +1,4 @@
-/** @file Timer.h 
+/** @file Actuator.h 
   *  Copyright (c) 2016 Ozbotics 
   *  Distributed under the MIT license (see LICENSE)
   */ 
