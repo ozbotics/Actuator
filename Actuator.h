@@ -16,43 +16,58 @@ class Actuator;
  */
 class ValueActuatorEnable : public Value<bool> {
   protected:
-    Actuator* _actuator;
+    Actuator* _actuator; /**< protected variable _actuator  The Actuator */ 
     
   public:
+  
+  /**
+    * Constructor
+    * @param actuator The Actuator
+    */
     ValueActuatorEnable(Actuator* actuator) : _actuator(actuator), Value<bool>() {}
 
+   /**
+    * persist the current value to the actual actuator
+    * @todo - maybe simply changing the value should 'persist' to the actuator
+    *
+    * @return nothing
+    */  
     virtual void persistValue();
 };
 
 /**
- *  The Base class of all Actuators. 
+ * The Base class of all Actuators. 
+ * 
+ * Actuators can be started and stopped
  */
 class Actuator {
   public:
     ValueActuatorEnable* enabled; /**< public variable enabled Value interface */ 
 
-    /**
-     *  Constructor
-     */
+   /**
+    *  Constructor
+    */
     Actuator();
     
-    /**
-     *  Destructor
-     */
+   /**
+    *  Destructor
+    */
     ~Actuator()  {
       delete enabled;
     }
     
-    /**
-     * start the actuator
-     * @return nothing
-     */  
+   /**
+    * start the actuator
+    *
+    * @return nothing
+    */  
     virtual void start()=0;
     
-    /**
-     * start the actuator
-     * @return nothing
-     */ 
+   /**
+    * stop the actuator
+    *
+    * @return nothing
+    */ 
     virtual void stop()=0;
 };
 
