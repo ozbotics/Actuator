@@ -22,16 +22,14 @@ class DigitalActuator : public Actuator {
     * update the value and start the actuator
     *
     * @param _enabled start/stop the actuator
-    * @return nothing
-    */ 
+   */ 
     inline void _setEnabled(bool _enabled) {
       enabled->setValue(_enabled);
       digitalWrite(_pin, _enabled);
     }
     
   public:
-  
-  /**
+   /**
     * Constructor
     *
     * @param pin The Output pin
@@ -43,15 +41,11 @@ class DigitalActuator : public Actuator {
     
    /**
     * start the actuator
-    *
-    * @return nothing
     */  
     virtual void start();
     
    /**
     * stop the actuator
-    *
-    * @return nothing
     */ 
     virtual void stop();
 

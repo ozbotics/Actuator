@@ -29,8 +29,6 @@ class ValueActuatorEnable : public Value<bool> {
    /**
     * persist the current value to the actual actuator
     * @todo - maybe simply changing the value should 'persist' to the actuator
-    *
-    * @return nothing
     */  
     virtual void persistValue();
 };
@@ -58,15 +56,11 @@ class Actuator {
     
    /**
     * start the actuator
-    *
-    * @return nothing
     */  
     virtual void start()=0;
     
    /**
     * stop the actuator
-    *
-    * @return nothing
     */ 
     virtual void stop()=0;
 };
