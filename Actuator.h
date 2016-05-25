@@ -20,8 +20,9 @@ class ValueActuatorEnable : public Value<bool> {
     
   public:
   
-  /**
+   /**
     * Constructor
+    *
     * @param actuator The Actuator
     */
     ValueActuatorEnable(Actuator* actuator) : _actuator(actuator), Value<bool>() {}
